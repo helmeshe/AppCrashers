@@ -1,0 +1,27 @@
+﻿<Window x:Class="AppCrasher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCrasher"
+        mc:Ignorable="d"
+        Title="App Crasher" Height="200" Width="360">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="4">Target Window Title</TextBlock>
+            <TextBox x:Name="WindowTitle" Width="200" Margin="4">App Window</TextBox>
+        </StackPanel>
+        <Button Grid.Row="1" Click="ButtonBase_OnClick" FontSize="16">
+            <TextBlock TextWrapping="Wrap">
+                To reproduce a crash:<LineBreak/>
+                <LineBreak/>
+                1. Click this button to show Embedded Crasher.<LineBreak/>
+                2. On Embedded Crasher, check the check box.<LineBreak/>
+            </TextBlock>
+        </Button>
+    </Grid>
+</Window>

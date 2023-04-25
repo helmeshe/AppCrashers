@@ -1,6 +1,7 @@
 #include "pch.h"
 #include <Windows.h>
 #include <xutility>
+#include <stdexcept>
 #include "ProblemWindow.h"
 
 namespace EmbeddedClr
@@ -43,6 +44,14 @@ namespace EmbeddedClr
 			if (m_enableCrash)
 			{
 				SetLastError(ERROR_INVALID_PARAMETER);
+				handled = true;
+			}
+		}
+		else if (msg == WM_GETTEXTLENGTH)
+		{
+			if (m_enableCrash)
+			{
+				throw std::invalid_argument("Invalid arguments!");
 				handled = true;
 			}
 		}
